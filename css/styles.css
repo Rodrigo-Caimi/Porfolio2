@@ -962,23 +962,21 @@ textarea {
   z-index: 2;
 }
 
-/* Espaciado superior unificado en todos los proyectos (altura tipo Café) */
-body[data-proyecto-id] section.work-detail-hero,
-body[data-proyecto-id] .work-detail-hero {
-  padding-top: 56px !important;
-  padding-bottom: 20px;
+/* Solo espaciado header → cajas (igual en todos, como Café). No cambia layout de galerías. */
+body[data-proyecto-id="1"] .work-detail-hero,
+body[data-proyecto-id="2"] .work-detail-hero,
+body[data-proyecto-id="3"] .work-detail-hero,
+body[data-proyecto-id="4"] .work-detail-hero,
+body[data-proyecto-id="5"] .work-detail-hero {
+  padding-top: 48px !important;
 }
 
-body[data-proyecto-id] .gallery {
-  margin-top: 24px;
+body[data-proyecto-id="1"] .gallery,
+body[data-proyecto-id="5"] .gallery {
+  margin-top: 28px;
 }
 
 /* Galería vertical: Mayo Amarillo + Totem de Café */
-body[data-proyecto-id="2"] .work-detail-hero,
-body[data-proyecto-id="3"] .work-detail-hero {
-  padding-top: 56px !important;
-}
-
 body[data-proyecto-id="2"] .gallery,
 body[data-proyecto-id="3"] .gallery {
   grid-template-columns: minmax(0, 4fr) minmax(110px, 1fr);
@@ -1118,12 +1116,6 @@ body[data-proyecto-id="3"] .thumb-item img {
 }
 
 /* Proyecto Fotográfico: fotos completas + altura estable */
-body[data-proyecto-id="4"] section.work-detail-hero,
-body[data-proyecto-id="4"] .work-detail-hero {
-  padding-top: 56px !important;
-  padding-bottom: 20px;
-}
-
 body[data-proyecto-id="4"] .gallery {
   display: flex !important;
   flex-direction: column;
@@ -1131,7 +1123,7 @@ body[data-proyecto-id="4"] .gallery {
   gap: 20px;
   max-width: 960px;
   width: 100%;
-  margin: 0 auto;
+  margin: 28px auto 0;
 }
 
 body[data-proyecto-id="4"] .main-image {
@@ -1194,11 +1186,6 @@ body[data-proyecto-id="4"] .thumb-item img {
 }
 
 @media (max-width: 920px) {
-  body[data-proyecto-id="4"] section.work-detail-hero,
-  body[data-proyecto-id="4"] .work-detail-hero {
-    padding-top: 56px !important;
-  }
-
   body[data-proyecto-id="4"] .thumbnails {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
