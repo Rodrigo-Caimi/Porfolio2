@@ -129,8 +129,8 @@ const PROYECTOS = [
     gallery: [
       { src: 'IMAGENES/fotografia cerveza.jpg', alt: 'Fotografía cerveza' },
       { src: 'IMAGENES/joyeriaCreacion.jpg', alt: 'Joyeria Creación' },
-      { src: 'IMAGENES/lo-que-no-vemos4.jpg', alt: 'Lo que no vemos 4' },
-      { src: 'IMAGENES/lo-que-no-vemos.jpg', alt: 'Lo que no vemos' }
+      { src: 'IMAGENES/lo-que-no-vemos4.JPG', alt: 'Lo que no vemos 4' },
+      { src: 'IMAGENES/lo-que-no-vemos.JPG', alt: 'Lo que no vemos' }
     ],
     processTitle: 'Proceso del proyecto',
     process: [
