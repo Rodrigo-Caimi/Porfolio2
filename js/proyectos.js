@@ -125,7 +125,7 @@ const PROYECTOS = [
     cardClass: 'card-wide',
     cardImage: 'IMAGENES/fotografia cerveza.jpg',
     cardAlt: 'Proyecto Fotográfico',
-    galleryContain: false,
+    galleryContain: true,
     gallery: [
       { src: 'IMAGENES/fotografia cerveza.jpg', alt: 'Fotografía cerveza' },
       { src: 'IMAGENES/joyeriaCreacion.jpg', alt: 'Joyeria Creación' },

@@ -1106,6 +1106,73 @@ body[data-proyecto-id="3"] .thumb-item img {
   display: block;
 }
 
+/* Proyecto Fotográfico: fotos completas sin recorte */
+body[data-proyecto-id="4"] .work-detail-hero {
+  padding-top: 40px;
+}
+
+body[data-proyecto-id="4"] .gallery {
+  grid-template-columns: 1fr;
+  gap: 18px;
+  max-width: 1100px;
+  margin: 20px auto 0;
+}
+
+body[data-proyecto-id="4"] .main-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: min(72vh, 700px);
+  border-radius: 20px;
+  background: #1a1a1a;
+}
+
+body[data-proyecto-id="4"] .main-image img {
+  object-fit: contain !important;
+  object-position: center center;
+  background: #1a1a1a;
+}
+
+body[data-proyecto-id="4"] .thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  height: auto;
+  max-height: none;
+}
+
+body[data-proyecto-id="4"] .thumb-item {
+  border-radius: 14px;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+body[data-proyecto-id="4"] .thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  background: #1a1a1a;
+}
+
+@media (max-width: 920px) {
+  body[data-proyecto-id="4"] .gallery {
+    max-width: 100%;
+  }
+
+  body[data-proyecto-id="4"] .main-image {
+    max-height: none;
+    aspect-ratio: 4 / 3;
+  }
+
+  body[data-proyecto-id="4"] .thumbnails {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Campaña Reel ORT: más ancho (sin subir la altura) */
 body[data-proyecto-id="5"] .work-detail-hero,
 body[data-proyecto-id="5"] .golden-section {
