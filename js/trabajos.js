@@ -141,6 +141,17 @@
       return;
     }
 
+    // Reutilizar la misma <img> para evitar saltos de scroll al cambiar fotos
+    var existing = mainWrap.querySelector('#main-media');
+    if (existing && existing.tagName === 'IMG') {
+      existing.className = mainClass || '';
+      existing.alt = alt || '';
+      if (existing.getAttribute('src') !== src) {
+        existing.setAttribute('src', src);
+      }
+      return;
+    }
+
     mainWrap.innerHTML =
       '<img id="main-media" class="' + mainClass + '" src="' + src + '" alt="' + (alt || '') + '" />';
   }
@@ -152,17 +163,27 @@
     const thumbItems = gallery.querySelectorAll('.thumb-item');
 
     thumbItems.forEach(function (item) {
-      item.addEventListener('click', function () {
+      item.addEventListener('click', function (event) {
+        event.preventDefault();
         const type = item.getAttribute('data-type') || 'image';
         const full = item.getAttribute('data-full') || '';
         const poster = item.getAttribute('data-poster') || '';
         const viewUrl = item.getAttribute('data-view') || '';
         const alt = item.querySelector('.thumb-img') ? item.querySelector('.thumb-img').alt : '';
+        const scrollY = window.scrollY || window.pageYOffset || 0;
 
         thumbItems.forEach(function (thumb) { thumb.classList.remove('is-active'); });
         item.classList.add('is-active');
 
         showMainMedia(mainWrap, type, full, poster, alt, mainClass || '', viewUrl);
+
+        // Mantener la posición al cambiar (evita el salto en Aurora / fotos horizontales)
+        requestAnimationFrame(function () {
+          window.scrollTo(0, scrollY);
+          requestAnimationFrame(function () {
+            window.scrollTo(0, scrollY);
+          });
+        });
       });
     });
   }
