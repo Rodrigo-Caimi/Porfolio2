@@ -266,7 +266,7 @@
     const proyecto = getProyecto(proyectoId);
     if (!proyecto) return;
 
-    document.title = proyecto.title + ' — Detalle';
+    document.title = proyecto.title + ' — Rodrigo Caimi';
 
     renderGallery(document.querySelector('[data-proyecto-gallery]'), proyecto);
     renderActions(document.querySelector('[data-proyecto-actions]'), proyecto);
